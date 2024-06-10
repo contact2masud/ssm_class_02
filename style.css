@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+:root {
+  --pc: #0097e6;
+  --sec: #273c75;
+  --rd: #00a8ff;
+}
+header {
+  width: 100%;
+  /* position: static; */
+}
+.container {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.logo {
+  flex-basis: 20%;
+  justify-content: left;
+}
+.menu {
+  flex-basis: 60%;
+  justify-content: center;
+}
+
+.btns {
+  flex-basis: 20%;
+  justify-content: right;
+}
+.logo a img {
+  /* width: 200px; */
+  width: auto;
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+nav ul li a {
+  padding: 15px;
+  font-size: 20px;
+}
+
+/* css for buttom animation */
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.btns a {
+  position: relative;
+  text-decoration: none;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  background: grey;
+  /* এখানে যে কালার দিবো সেটা বাটনের বর্ডার হিসাবে দেখানে। */
+  color: var(--rd);
+  /* এখানে যে কালার দিবো সেটা বাটনের কালার হিসাবে দেখানে। */
+  /* transition: 0.5s; */
+  /* transition-timing-function: linear; */
+  /* বাটনের ক্ষেত্রে এখানে transition না দিয়ে before and after এ দিলেই ভালো কাজ করছে */
+}
+
+.btns a:hover {
+  background: var(--pc);
+  box-shadow: 0 0 20px var(--pc);
+  color: var(--rd);
+  /* হেভার করলে এই কালার দেখাবে */
+}
+
+.btns a::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: white;
+  /* বাটনে ব্যকাগ্রাউন্ডে  এই কালার শো করবে */
+  color: var(--rd);
+}
+
+.btns a span {
+  position: relative;
+  z-index: 1;
+  /* text-transform: uppercase;
+  transition: 1s;
+  color: white; */
+  /* ফন্টের কালার এটা */
+}
+
+.btns a i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.btns a i::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 80%;
+  width: 10px;
+  height: 4px;
+  background: white;
+  transform: translateX(-50%) skewX(325deg);
+  transition: 0.3s;
+  transition-timing-function: linear;
+  /* কত স্মুথ কাজ করবে তার জন্য এইটা ব্যবহার করছি */
+}
+
+.btns a i:hover::before {
+  width: 20px;
+  left: 20%;
+}
+
+.btns a i::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 10px;
+  height: 4px;
+  background: white;
+  transform: translateX(-50%) skewX(325deg);
+  transition: 0.3s;
+  transition-timing-function: linear;
+}
+
+.btns a i:hover::after {
+  width: 20px;
+  left: 80%;
+}
+
+/* about Part  CSS */
+
+.about {
+  display: flex;
+  width: 100%;
+  height: 700px;
+}
+
+.about_content {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: left;
+  position: relative;
+}
+.about_partdiv {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.about_image {
+  flex-basis: 40%;
+  justify-content: left;
+}
+.about_image {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin: 0 40px;
+}
+
+.about_image img {
+  width: 100%;
+  position: absolute;
+  max-width: 100%;
+}
+
+.about_partdiv h1 {
+  color: var(--rd);
+  margin: 40px 0;
+  text-align: center;
+  text-shadow: 0 0 3px #1a0e0e, 0 0 5px #0000ff;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.about_partdiv h2 {
+  color: var(--sec);
+  margin: 40px 0;
+  text-align: center;
+  /* text-shadow: 0 0 3px #1a0e0e, 0 0 5px #0000ff; */
+  font-size: 20px;
+  font-family: sans-serif;
+  text-align: justify;
+}
+
+.about_content a {
+  background: var(--rd);
+  justify-content: center;
+  margin-left: 200px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+/* services part CSS */
+.container {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.services {
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+
+.services h1 {
+  color: #00a8ff;
+  font-size: 40px;
+  padding: 20px 0;
+  text-shadow: 3px 0 10px black;
+}
+
+.services h2 {
+  color: black;
+  font-size: 20px;
+  padding: 10px 0;
+  /* text-shadow: 3px 0 10px black; */
+}
+
+.ser_content {
+  width: 100%;
+  height: 800px;
+  /* background: #273c75; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: row; */
+}
+
+.ser_content .con1,
+.con2,
+.con3,
+.con4,
+.con5,
+.con6 {
+  width: 32%;
+  height: 300px;
+  background: #0097e6;
+  margin: 2%;
+  flex-basis: 28%;
+  border-radius: 20px;
+}
+
+.material-symbols-outlined {
+  font-size: 80px;
+  margin-top: 30px;
+  color: gold;
+}
